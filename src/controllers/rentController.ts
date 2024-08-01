@@ -33,7 +33,7 @@ export const createRent = async (req: Request, res: Response) => {
     car.carStatus = CarStatus.rented
     await car.save()
 
-    return apiResponse(res, 201, newRent, messages.rent.createSuccess)
+    return apiResponse(res, 201, newRent)
   } catch (error) {
     return apiResponse(res, 500)
   }

@@ -1,11 +1,12 @@
 import cors from 'cors'
+import dotenv from 'dotenv'
 import express from 'express'
 import mongoose from 'mongoose'
 import authRoutes from './routes/authRoutes'
+import buyRoutes from './routes/buyRoutes'
 import carRoutes from './routes/carRoutes'
 import rentRoutes from './routes/rentRoutes'
 import userRouter from './routes/userRoutes'
-import dotenv from 'dotenv'
 
 dotenv.config()
 
@@ -31,6 +32,7 @@ app.use('/users', userRouter)
 app.use('/auth', authRoutes)
 app.use('/cars', carRoutes)
 app.use('/rent', rentRoutes)
+app.use('/buy', buyRoutes)
 
 app.use((err, req, res, next) => {
   console.error('Erro:', err)

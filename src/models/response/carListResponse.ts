@@ -1,14 +1,15 @@
-import { CarStatus } from '../request/carModel'
+import { CarStatus, OfferType } from '../request/carModel'
 
-export class CarLisResponse {
+export class CarListResponse {
   carName: string
   creationUserEmail: string
   carId: string
   year: string
   valuePerDay: number
   valueTotal: number
-  urlImage: string
+  urlImageList: string[]
   carStatus: CarStatus
+  offerType: OfferType
 
   constructor(
     carName: string,
@@ -17,8 +18,9 @@ export class CarLisResponse {
     year: string,
     valuePerDay: number,
     valueTotal: number,
-    urlImage: string,
+    urlImageList: string[],
     carStatus: CarStatus,
+    offerType: OfferType,
   ) {
     this.carName = carName
     this.creationUserEmail = creationUserEmail
@@ -26,22 +28,24 @@ export class CarLisResponse {
     this.year = year
     this.valuePerDay = valuePerDay
     this.valueTotal = valueTotal
-    this.urlImage = urlImage
+    this.urlImageList = urlImageList
     this.carStatus = carStatus
+    this.offerType = offerType
   }
 
-  static fromCarList(carList: any[]): CarLisResponse[] {
+  static fromCarList(carList: any[]): CarListResponse[] {
     return carList.map(
       car =>
-        new CarLisResponse(
+        new CarListResponse(
           car.carName,
           car.creationUserEmail,
           car.id,
           car.year,
           car.valuePerDay,
           car.valueTotal,
-          car.urlImage,
+          car.urlImageList,
           car.carStatus,
+          car.offerType,
         ),
     )
   }

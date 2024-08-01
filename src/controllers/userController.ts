@@ -45,7 +45,7 @@ export const resetPassword = async (req: Request, res: Response) => {
     user.password = hashedNewPassword
     await user.save()
 
-    return apiResponse(res, 200, null, messages.user.resetPasswordSuccess)
+    return apiResponse(res, 200, true, messages.user.resetPasswordSuccess)
   } catch (error) {
     return apiResponse(res, 500)
   }

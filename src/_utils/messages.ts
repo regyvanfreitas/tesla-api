@@ -16,6 +16,7 @@ export const messages = {
     carDeleteSuccess: 'Carro excluído com sucesso',
     carNotFound: 'Nenhum carro encontrado',
     noHasCarId: 'Id do carro é obrigatório',
+    uploadSuccess: 'Upload realizado com sucesso',
   },
   rent: {
     createSuccess: 'Aluguel criado com sucesso',
@@ -24,5 +25,10 @@ export const messages = {
     notFound: 'Nenhum aluguel encontrado',
     cancelSuccess: 'Aluguel cancelado com sucesso!',
     carRented: 'O carro solicitado já está alugado',
+  },
+  buy: {
+    buySuccess: 'Compra realizada com sucesso!',
+    carIsNotSell: 'O carro solicitado não está à venda',
+    unauthorized: 'Não é possível comprar um carro anunciado por você',
   },
 } as const
